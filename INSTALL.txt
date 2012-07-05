@@ -48,13 +48,6 @@ The OpenCV dependency is optional. It is only used for visualisation purposes.
 To turn it off, set "OPENCV_SUPPORT" to "OFF" in 
 "robotvision/trunk/CMakeLists.txt".
 
-Now, download CSparse and copy its source files to RobotVision.
-
-> wget http://www.cise.ufl.edu/research/sparse/CSparse/CSparse.tar.gz
-> tar xvf CSparse.tar.gz
-> cp CSparse/Source/* robotvision/trunk/CSparse/
-> cp CSparse/Include/cs.h robotvision/trunk/CSparse/
-
 Finally, you can build RobotVision
 
 > cd robotvision/trunk

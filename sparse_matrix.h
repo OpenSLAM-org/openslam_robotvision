@@ -36,7 +36,7 @@ extern "C"{
 #include "cholmod.h"
 
 #else
-#include "CSparse/cs.h"
+#include "csparse/cs.h"
 #endif
 }
 

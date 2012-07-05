@@ -15,12 +15,12 @@ IF( NOT CMAKE_BUILD_TYPE )
    add_definitions(-DRV_BUILD_RELEASE)
 ENDIF()
 
-SET (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror -Wall ")
-SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror  -Wall ")
+SET (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall ")
+SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -Wall ")
 
 MESSAGE(STATUS "LIB PATH: ${CMAKE_LIBRARY_PATH}")
 
-SET (LIB_NAMES lapack f77blas cblas atlas GL cvd  ) #jpeg png tiff 
+SET (LIB_NAMES lapack GLU blas  GL cvd  ) #jpeg png tiff
 
 IF (OPENCV_SUPPORT)
     SET (LIB_NAMES  ${LIB_NAMES} cv cvaux cxcore highgui)
@@ -46,8 +46,8 @@ SET (SOURCES quadtree.h stopwatch.h bundle_adjuster.h graph_optimizer.h transfor
 
 
 # Append CSparse Sources
-FILE(GLOB CSPARSE_H "CSparse/*.h")
-FILE(GLOB CSPARSE_C "CSparse/*.c")
+FILE(GLOB CSPARSE_H "csparse/*.h")
+FILE(GLOB CSPARSE_C "csparse/*.c")
 LIST(APPEND SOURCES ${CSPARSE_H} ${CSPARSE_C} )
 
 FOREACH(class ${CLASSES})
